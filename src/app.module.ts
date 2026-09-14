@@ -7,7 +7,6 @@ import { AuthMiddleware } from './auth.middleware.js';
 import { CatsModule } from './cats.module.js';
 import { LoggerMiddleware } from './logger.middleware.js';
 const isDevelopment = process.env.NODE_ENV === 'development';
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({
