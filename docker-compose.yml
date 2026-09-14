@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  # MySQL Database Service
+  mysql-db:
+    image: mysql:8.0
+    container_name: nest_mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: NestApp2026@#$
+      MYSQL_DATABASE: nest_db
+      MYSQL_USER: nest_user
+      MYSQL_PASSWORD: NestApp2026@#$
+    ports:
+      - '3308:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+  cloudbeaver:
+    image: dbeaver/cloudbeaver:latest
+    container_name: nest_db_cloudbeaver
+    restart: always
+    ports:
+      - '8978:8978'
+    depends_on:
+      - mysql-db
+volumes:
+  mysql_data:
