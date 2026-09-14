@@ -6,7 +6,7 @@ export class CatService {
   create(catData: Cat) {
     this.cats.push(catData);
   }
-  findAll(): Cat[] {
+  async findAll(): Promise<Cat[]> {
     return this.cats;
   }
 }
